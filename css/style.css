@@ -68,6 +68,21 @@ footer{
     height: 60px;
     background-color: lightgray;
     position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: grey;
     bottom: 0;
     right: 0;
+}
+
+footer input{
+    width: 90%;
+    height: 80%;
+    border: none;
+    border-radius: 30px;
+}
+footer i {
+    font-size: 2em;
+    margin: 0 2%;
 }
