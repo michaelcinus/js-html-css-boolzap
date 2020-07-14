@@ -13,6 +13,7 @@ function addSentListener () {
   if (key === 13  && txt.length > 0) {
     input.val(" ");
     sendMessage(txt);
+    window.setTimeout("receivedMessage()", 1000);
   }
 
 }
@@ -28,8 +29,18 @@ function sendMessage(txt) {
 
   target.append(template);
 
-  console.log(target);
+}
+
+function receivedMessage() {
   
+  var template = $("#template-message-received > div").clone();
+  var target = $(".right-messages");
+
+  template.find(".message-text").text("OK");
+  //template.find(".message-time").text(getActualHour());
+
+  target.append(template);
+
 }
 
 function getActualHour(){
