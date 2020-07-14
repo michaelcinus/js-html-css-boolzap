@@ -4,91 +4,112 @@
     box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    max-width: 100vw;
+    max-height: 100%;
+    background-color: #ddd;
+}
+
+i{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    background-color: #387;
+    z-index: -1;
+}
+
 /* container */
 #container{
-    width: 100%;
+    width: 80%;
+    height: 95%;
+    margin:auto;
+    display: flex;
+    z-index: 1;
+}
+
+#parte-sx,
+#parte-dx  {
+    float: left;
     height: 100%;
-    position: absolute;
 }
 
-/* header */
-header{
+#header-sx,
+#header-dx  {
     width: 100%;
-    height: 60px;
-    background-color: lightgray;
-    position: fixed;
-    z-index: 990;
+    height: 70px;
+    background-color: #eee;
+    font-size: 22px ;
+    color: #999;
     display: flex;
-    flex-direction: row;
-}
-
-header img{
-    height: 80%;
-    width: auto;
-}
-
-
-
-header i{
-    font-size: 1.2em;
-    margin: 0 7%;
-}
-
-/* header sx */
-#header-sx{
-    width: 30%;
-    height: 60px;
-    padding: 0 2%;
-    color : grey;
-    border-right: solid 1px grey;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 
-#header-sx span{
-    width: 30%;
+#header-sx img,
+#header-dx img {
+    width: 50px;
+    height: 50px;
+    margin : auto 0 auto 10px;
 }
 
-/* header dx */
-#header-dx{
-    width: 70%;
-    height: 60px;
-    padding: 0 2%;
-    color : grey;
+.f-dx{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    text-align: right;
+    width: 20%;
 }
 
-#header-dx span{
-    width: 12%;
+.f-dx > *{
+    margin: auto;
 }
 
 /* parte sx */
 #parte-sx{
-    width: 30%;
-    height: calc(100vh - 60px);
-    background-color: white;
-    position: fixed;
-    bottom: 0;
+    width: 35%;
+    background-color: rgb(119, 130, 177);
 }
-
 
 #ricevi-notifiche{
     width: 100%;
-    height: 100px;
+    height: 80px;
     background-color: lightblue;
     display: flex;
-    align-items: center;
 }
 
 #ricevi-notifiche span{
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: auto 0 auto 15px;
     background-color: white;
-    padding: 5%;
-    color: lightblue;
-    margin-left: 2%;
+    text-align: center;
+    line-height: 55px;
+   color: lightblue;
+}
+
+#ricevi-notifiche div{
+    width: calc(100%- 80px);
+    margin: auto;
+    padding: 0 10px;
+}
+
+#ricevi-notifiche h3{
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0;
+}
+
+#ricevi-notifiche a{
+    color: #4F7485;
+    font-size: 13px;
 }
 
 #ricerca-chat{
@@ -110,6 +131,7 @@ header i{
 .chat {
     width: 100%;
     height: 80px;
+    background-color: white;
     border-bottom: solid 1px gray;
     display: flex;
     align-items: center;
@@ -124,11 +146,18 @@ header i{
 /* parte dx */
 #parte-dx{
     width: 70%;
-    position: absolute;
+    height: 100%;
     right: 0;
-    padding: 60px ;
-    min-height: 1000px;
-    background-image: url(../img/sfondo.jpg);
+    background-color: lightseagreen;
+
+}
+
+#parte-dx .img-nome{
+    display: flex;
+}
+
+#parte-dx .img-nome span{
+    margin: 10px ;
 }
 
 #chat{
@@ -154,16 +183,13 @@ header i{
 
 /* footer */
 footer{
-    width: 70%;
+    width: 100%;
     height: 60px;
     background-color: lightgray;
-    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: grey;
-    bottom: 0;
-    right: 0;
 }
 
 footer input{

@@ -9,39 +9,29 @@
     <title>BoolzApp</title>
 </head>
 <body>
+    <header></header>
     <!-- container di tutta la pagina -->
     <div id="container">
-        <!-- header fixed -->
-        <header>
-            <div id="header-sx">
-                <img src="img/avatar.webp" alt="">
-                <span>
-                    <i class="fas fa-circle-notch"></i>
-                    <i class="fas fa-comment-alt"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                </span>
-
-            </div>
-            <div id="header-dx">
-                <img src="img/avatar2.png" alt="">
-                    
-                <span>
-                    <i class="fas fa-search"></i>
-                    <i class="fas fa-paperclip"></i>
-                    <i class="fas fa-ellipsis-v"></i>
-                </span>
-
-            </div>
-
-        </header>
-
       <!-- parte sinistra -->
       <div id="parte-sx">
+        <div id="header-sx">
+            <img src="img/avatar.webp" alt="">
+            <div class="f-dx">
+                <i class="fas fa-circle-notch"></i>
+                <i class="fas fa-comment-alt"></i>
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+        </div>
          <!-- sezione "ricevi notifiche" sinistra -->
          <div id="ricevi-notifiche">
             <span>
                 <i class="far fa-bell-slash"></i>
             </span>
+            <div>
+                <h3>Ricevi notifiche di nuovi messaggi</h3>
+                <a href="">Attiva notifiche dekstop</a>
+
+            </div>
 
          </div>
 
@@ -83,6 +73,20 @@
 
      <!-- parte destra -->
      <div id="parte-dx">
+        <div id="header-dx">
+            <div class="img-nome">
+                <img src="img/avatar2.png" alt="">
+                <span id="nome-msg">Nome Cognome<br><small>ultimo accesso 10:10</small></span>
+                
+            </div>
+                
+            <div class="f-dx">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-paperclip"></i>
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+
+        </div>
          <!-- sezione messaggio (scroll) -->
          <div id="chat">
                  <p class="messaggio inviato">Ciao! Come stai?</p>
@@ -90,16 +94,15 @@
                  <p class="messaggio ricevuto">Ciao! Tutto bene, tu?</p>
 
          </div>
-     </div>
-     <!-- /parte destra -->
-
-     <!-- footer -->
+         <!-- footer -->
      <footer>
         <i class="far fa-smile"></i>
         <input id="msg" type="text" placeholder="     Scrivi un messaggio">
         <i class="fas fa-microphone"></i>
 
      </footer>
+     </div>
+     <!-- /parte destra -->
 
     </div>
     <!-- /container di tutta la pagina -->
