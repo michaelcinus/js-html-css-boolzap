@@ -11,34 +11,33 @@
 <body>
     <header></header>
     <!-- container di tutta la pagina -->
-    <div id="container">
+    <div class="container">
       <!-- parte sinistra -->
-      <div id="parte-sx">
-        <div id="header-sx">
-            <img src="img/avatar.webp" alt="">
-            <div class="f-dx">
+      <div class="parte-sx">
+        <div class="header-sx">
+            <div class="header-sx-logo f-sx">
+                <img src="img/avatar.webp" alt="">
+            </div>
+            <div class="header-sx-icon f-dx">
                 <i class="fas fa-circle-notch"></i>
                 <i class="fas fa-comment-alt"></i>
                 <i class="fas fa-ellipsis-v"></i>
             </div>
         </div>
          <!-- sezione "ricevi notifiche" sinistra -->
-         <div id="ricevi-notifiche">
+         <div class="ricevi-notifiche">
             <span>
                 <i class="far fa-bell-slash"></i>
             </span>
             <div>
                 <h3>Ricevi notifiche di nuovi messaggi</h3>
                 <a href="">Attiva notifiche dekstop</a>
-
             </div>
-
          </div>
 
          <!-- sezione ricerca chat -->
-         <div id="ricerca-chat">
-             <input type="text" placeholder="    Cerca o inizia una nuova chat">
-
+         <div class="ricerca-chat">
+             <input id="ricerca-chat" type="text" placeholder="    Cerca o inizia una nuova chat">
          </div>
 
          <!-- sezione lista chat (scroll) -->
@@ -72,8 +71,8 @@
 
 
      <!-- parte destra -->
-     <div id="parte-dx">
-        <div id="header-dx">
+     <div class="parte-dx">
+        <div class="header-dx">
             <div class="img-nome">
                 <img src="img/avatar2.png" alt="">
                 <span id="nome-msg">Nome Cognome<br><small>ultimo accesso 10:10</small></span>
@@ -88,24 +87,52 @@
 
         </div>
          <!-- sezione messaggio (scroll) -->
-         <div id="chat">
-                 <p class="messaggio inviato">Ciao! Come stai?</p>
-
-                 <p class="messaggio ricevuto">Ciao! Tutto bene, tu?</p>
-
+         <div class="right-messages-container">
+             <div class="right-messages">
+                 <div class="message received">
+                     <span class="message-text">Ciao Come stai?</span>
+                     <span class="message-time">09.45</span>
+                     <i class="fa fa-chevron-down f-right message-options"></i>
+                     <div class="message-options-panel">
+                        <div class="message-info">Info message</div>
+                        <div class="message-destroy">Cancella message</div>
+                    </div>
+                 </div>
+                 <div class="message sent">
+                    <span class="message-text">tutto bene, te?</span>
+                    <span class="message-time">09.47</span>
+                    <i class="fa fa-chevron-down f-right message-options"></i>
+                    <div class="message-options-panel">
+                        <div class="message-info">Info message</div>
+                        <div class="message-destroy">Cancella message</div>
+                    </div>
+                </div>
+             </div>
          </div>
          <!-- footer -->
-     <footer>
-        <i class="far fa-smile"></i>
-        <input id="msg" type="text" placeholder="     Scrivi un messaggio">
-        <i class="fas fa-microphone"></i>
+        <footer>
+            <i class="far fa-smile"></i>
+            <input id="msg" type="text" placeholder="     Scrivi un messaggio">
+            <i class="fas fa-microphone"></i>
 
-     </footer>
+        </footer>
      </div>
      <!-- /parte destra -->
-
     </div>
     <!-- /container di tutta la pagina -->
+
+    <div id="template-message-sent" style="display: none;">
+        <div class="message sent">
+            <span id="message-text" class="message-text"> </span>
+            <span id="message-time" class="message-time"> </span>
+            <i class="fa fa-chevron-down f-right message-options"></i>
+            <div class="message-options-panel">
+                <div class="message-info">Info message</div>
+                <div class="message-destroy">Cancella message</div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
 
 </body>

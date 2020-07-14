@@ -4,12 +4,15 @@
     box-sizing: border-box;
 }
 
+/* GENERAL */
 body{
     display: flex;
     width: 100%;
     height: 100vh;
     max-width: 100vw;
     max-height: 100%;
+    margin: 0;
+    padding: 0;
     background-color: #ddd;
 }
 
@@ -28,8 +31,8 @@ header{
     z-index: -1;
 }
 
-/* container */
-#container{
+/* MAIN */
+.container{
     width: 80%;
     height: 95%;
     margin:auto;
@@ -37,34 +40,55 @@ header{
     z-index: 1;
 }
 
-#parte-sx,
-#parte-dx  {
+.parte-sx,
+.parte-dx  {
     float: left;
     height: 100%;
 }
 
-#header-sx,
-#header-dx  {
+.header-sx,
+.header-dx  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 70px;
     background-color: #eee;
     font-size: 22px ;
     color: #999;
-    display: flex;
-    justify-content: space-between;
 }
 
-#header-sx img,
-#header-dx img {
+.header-sx img,
+.header-dx img {
     width: 50px;
     height: 50px;
     margin : auto 0 auto 10px;
 }
 
-.f-dx{
+.header-sx > *,
+.header-dx > * {
     display: flex;
+    width: 40%;
+    height: 100%;
+}
+
+.header-sx .f-dx,
+.header-dx .f-dx {
     text-align: right;
-    width: 20%;
+}
+
+.header-sx .f-dx > *,
+.header-dx .f-dx > * {
+    margin: auto;
+}
+
+
+.f-dx{
+    float: right;
+}
+
+.f.sx{
+    float: left;
 }
 
 .f-dx > *{
@@ -72,19 +96,20 @@ header{
 }
 
 /* parte sx */
-#parte-sx{
+.parte-sx{
     width: 35%;
+    border-right: solid 1px black;
     background-color: rgb(119, 130, 177);
 }
 
-#ricevi-notifiche{
+.ricevi-notifiche{
     width: 100%;
     height: 80px;
     background-color: lightblue;
     display: flex;
 }
 
-#ricevi-notifiche span{
+.ricevi-notifiche span{
     width: 50px;
     height: 50px;
     border-radius: 100%;
@@ -95,24 +120,24 @@ header{
    color: lightblue;
 }
 
-#ricevi-notifiche div{
+.ricevi-notifiche div{
     width: calc(100%- 80px);
     margin: auto;
     padding: 0 10px;
 }
 
-#ricevi-notifiche h3{
+.ricevi-notifiche h3{
     font-size: 16px;
     font-weight: normal;
     margin: 0;
 }
 
-#ricevi-notifiche a{
+.ricevi-notifiche a{
     color: #4F7485;
     font-size: 13px;
 }
 
-#ricerca-chat{
+.ricerca-chat{
     width: 100%;
     height: 50px;
     background-color: lightgray;
@@ -121,7 +146,7 @@ header{
     align-items: center;
 }
 
-#ricerca-chat input{
+.ricerca-chat input{
     width: 90%;
     height: 80%;
     border: none;
@@ -144,47 +169,76 @@ header{
 }
 
 /* parte dx */
-#parte-dx{
-    width: 70%;
-    height: 100%;
-    right: 0;
+.parte-dx{
+    width: 65%;
     background-color: lightseagreen;
 
 }
 
-#parte-dx .img-nome{
+.parte-dx .img-nome{
     display: flex;
 }
 
-#parte-dx .img-nome span{
+.parte-dx .img-nome span{
     margin: 10px ;
 }
 
-#chat{
-    display: flex;
-    flex-direction: column;
+.right-messages-container{
+    width: 100%;
+    height: calc(100% - 70px - 70px);
 }
 
-.messaggio {
-    margin: 2%;
-    padding: 0.5%;
-    border-radius: 20px;
-    display: flex;
+.right-messages-container .message{
+    position: relative;
+    float: left;
+    clear: both;
+    min-width: 10px;
+    max-width: 60%;
+    margin: 10px;
+    padding: 15px;
+    background-color: grey;
+    border-radius: 10px;
+    z-index: 100;
+    font-size: 15px;
 }
 
-.inviato{
-    background-color: lightgreen;
-    justify-content: flex-end;
+.right-messages-container .sent{
+    float: right;
 }
 
-.ricevuto{
+.right-messages-container .message .message-time{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 13px;
+}
+
+.right-messages-container .message .message-options, 
+.right-messages-container .message .message-options-panel{
+    display: none;
+}
+
+.right-messages-container .message:hover .message-options,
+.right-messages-container .message:hover .message-options-panel{
+ display: block;
+
+}
+
+.right-messages-container .message .message-options-panel{
+    position: absolute;
+    bottom: -75px;
+    width: 150px;
+    height: 80px;
     background-color: white;
+    border-radius: 10px;
+    border: solid 1px black;
+    left: 0;
 }
 
 /* footer */
 footer{
     width: 100%;
-    height: 60px;
+    height: 70px;
     background-color: lightgray;
     display: flex;
     justify-content: space-between;

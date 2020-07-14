@@ -1,48 +1,40 @@
-$(document).ready(init(){
+function addSentListener () {
 
-  
-});
+  var target = $("#msg");
+  target.keyup(sendKeyup);
+ }
 
-function init() {
-
-  addSentListener();
-}
-
-
-function addSentListener{
-
- var target = $("#new-message-input");
- target.keyup(endKeyup);
-}
-
-function sendKeyup() {
+ function sendKeyup(event) {
   
   var key = event.which;
+  var input = $(this);
+  var txt = input.val();
   
-  if (key === 13) {
-    var input = $(this);
-    var txt = input.val();
-
+  if (key === 13  && txt.length > 0) {
     input.val(" ");
-
-    function sendMessage (txt);
-    
+    sendMessage(txt);
   }
 }
 
-function sendMessage (txt) {
+function sendMessage(txt) {
   var template = $("#template-message-sent > div").clone();
   var target = $("#right-messages");
 
   template.find("#message-text").text(txt);
   template.find("#message-time").text(getActualHour());
 
-
   target.append(template);
 }
 
 function getActualHour(){
 
-  var date = new date();
+  var date = new Date();
   return date.getHours() + ":" + date.getMinutes;
 }
+
+function init() {
+
+  addSentListener();
+}
+
+$(document).ready(init);
