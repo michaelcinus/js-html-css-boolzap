@@ -50,12 +50,21 @@ function addSentListener () {
 
 }
 
-$(document).on("click", ".message-options", function(){
+//click su messaggio e eliminazione di esso
+$(document).on("click", ".message-options", mostraPanel () );
+$(document).on("click", ".message-options", cancellaMessage () );
 
-  console.log("hai click sul messaggio");
-  
 
-});
+function mostraPanel () {
+  var btn = $(this);
+  var panel = btn.find("message-options-panel");
+  panel.toggle();
+}
+
+function cancellaMessage () {
+  var btn = $(this);
+  btn.parents("message").remove;
+}
 
 
 //INVIO MESSAGGIO

@@ -191,6 +191,7 @@ header{
 .right-messages-container .message{
     position: relative;
     float: left;
+    display: flex;
     clear: both;
     min-width: 100px;
     max-width: 60%;
@@ -200,6 +201,10 @@ header{
     border-radius: 10px;
     z-index: 100;
     font-size: 15px;
+}
+
+.right-messages-container .message i{
+    margin-left: 8px;
 }
 
 .right-messages-container .sent{
@@ -218,10 +223,8 @@ header{
     display: none;
 }
 
-.right-messages-container .message:hover .message-options,
-.right-messages-container .message:hover .message-options-panel{
+.right-messages-container .message:hover .message-options{
  display: block;
-
 }
 
 .right-messages-container .message .message-options-panel{
@@ -255,4 +258,8 @@ footer input{
 footer i {
     font-size: 2em;
     margin: 0 2%;
+}
+
+.show{
+    display: block;
 }
