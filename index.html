@@ -6,186 +6,259 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>BoolzApp</title>
+    <title>BOOLZAPP</title>
 </head>
 <body>
-    <header></header>
-    <!-- container di tutta la pagina -->
+    <!-- HEADER -->
+    <header>
+
+    </header>
+
+    <!-- CONTAINER INTERA PAGINA -->
     <div class="container">
-      <!-- parte sinistra -->
-      <div class="parte-sx">
-        <div class="header-sx">
-            <div class="header-sx-logo f-sx">
-                <img src="img/avatar.webp" alt="">
-            </div>
-            <div class="header-sx-icon f-dx">
+        
+        <!-- PARTE SINISTRA -->
+        <div class="parte-sx">
+                     
+          <!-- HEADER PARTE SINISTRA -->
+          <div class="header-sx">
+
+              <div class="logo-header-sx float-left">
+                <img src="img/avatario.jpg" alt="">
+              </div>
+
+              <div class="icon-header-sx float-right">
                 <i class="fas fa-circle-notch"></i>
                 <i class="fas fa-comment-alt"></i>
                 <i class="fas fa-ellipsis-v"></i>
-            </div>
-        </div>
-         <!-- sezione "ricevi notifiche" sinistra -->
-         <div class="ricevi-notifiche">
-            <span>
+              </div>
+
+          </div>
+
+          <!-- SEZIONE RICEVI-NOTIFICHE -->
+          <div class="ricevi-notifiche">
+
+            <span class="icon-ricevi-notifiche">
                 <i class="far fa-bell-slash"></i>
             </span>
-            <div>
+
+            <div class="text-ricevi-notifiche">
                 <h3>Ricevi notifiche di nuovi messaggi</h3>
                 <a href="">Attiva notifiche dekstop</a>
             </div>
-         </div>
 
-         <!-- sezione ricerca chat -->
-         <div class="ricerca-chat">
-             <input id="ricerca-chat" type="text" placeholder="    Cerca o inizia una nuova chat">
-         </div>
+          </div>
 
-         <!-- sezione lista chat (scroll) -->
-         <div class="contatti">
-             <div class="contatto" data-id="1">
-                 <img src="img/avatar.webp" alt="">
-                 <span>
-                     <h6 class="nome">Marco</h6>
-                     <p>bla bla bla bla bla bla....</p>
-                 </span>
-             </div>
-             <div class="contatto" data-id="2">
-                <img src="img/avatar2.png" alt="">
-                <span>
-                    <h6 class="nome">Matteo</h6>
+          <!-- SEZIONE RICERCA-CONTATTI -->
+          <div class="ricerca-contatti">
+            <input id="ricerca-chat" type="text" placeholder="    Cerca o inizia una nuova chat">
+          </div>
+
+          <!-- SEZIONE LISTA-CONTATTI -->
+          <div class="contatti">
+
+            <div class="contatto active" data-id="0">
+                <img src="img/avatar.webp" alt="">
+                <span class="anteprima-contatto">  
+                    <h3 class="nome">Marco Montemagno</h3>
                     <p>bla bla bla bla bla bla....</p>
                 </span>
             </div>
-            <div class="contatto" data-id="3">
+
+            <div class="contatto" data-id="1">
+                <img src="img/avatar2.png" alt="">
+                <span class="anteprima-contatto">
+                    <h3 class="nome">Matteo Salvini</h3>
+                    <p>bla bla bla bla bla bla....</p>
+                </span>
+            </div>
+
+            <div class="contatto" data-id="2">
                 <img src="img/avatar3.png" alt="">
-                <span>
-                    <h6 class="nome">Martina</h6>
+                <span class="anteprima-contatto">
+                    <h3 class="nome">Miriam Leone</h3>
                     <p>bla bla bla bla bla bla....</p>
                 </span>
             </div>
 
-         </div>
-
-      </div>
-     <!-- /parte sinistra -->
-
-
-     <!-- parte destra -->
-     <div class="parte-dx">
-        <div class="header-dx">
-            <div class="img-nome">
-                <img src="img/avatar2.png" alt="">
-                <span id="nome-msg">Nome Cognome<br><small>ultimo accesso 10:10</small></span>
-                
-            </div>
-                
-            <div class="f-dx">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-paperclip"></i>
-                <i class="fas fa-ellipsis-v"></i>
-            </div>
+          </div>
 
         </div>
-         <!-- sezione messaggio (scroll) -->
-         <div class="right-messages-container">
-             <div id="right-messages" class="right-messages active" data-id="1">
-                 <div class="message received">
-                     <span class="message-text">Ciao Come stai?</span>
-                     <span class="message-time">09.45</span>
-                     <i class="fa fa-chevron-down f-right message-options"></i>
-                     <div class="message-options-panel">
-                        <div class="message-info">Info message</div>
-                        <div class="message-destroy">Cancella message</div>
+        <!-- /PARTE SINISTRA -->
+
+        <!-- PARTE DESTRA -->
+        <div class="parte-dx">
+            
+          <!-- HEADER PARTE DESTRA -->
+          <div class="header-dx">
+           
+            <!-- CONTATTO VISUALIZZATO ID "0" -->
+           <div class="img-header-dx float-left active" data-id="0">
+
+                <img src="img/avatar.webp" alt="">
+                <span class="nome-msg">
+                  <h4>Marco Montemagno</h4>
+                  <small>ultimo accesso 10:10</small>
+                </span>
+
+           </div>
+
+              <!-- CONTATTO VISUALIZZATO ID "1" -->
+              <div class="img-header-dx float-left" data-id="1">
+
+                <img src="img/avatar2.png" alt="">
+                <span class="nome-msg">
+                  <h4>Matteo Salvini</h4>
+                  <small>ultimo accesso 09:10</small>
+                </span>
+
+           </div>
+
+              <!-- CONTATTO VISUALIZZATO ID "2" -->
+              <div class="img-header-dx float-left" data-id="2">
+
+                <img src="img/avatar3.png" alt="">
+                <span class="nome-msg">
+                  <h4>Miriam Leone</h4>
+                  <small>ultimo accesso 00:10</small>
+                </span>
+
+           </div>
+
+           <div class="icon-header-dx float-right">
+            <i class="fas fa-circle-notch"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+
+          </div>
+
+          <!-- SEZIONE MESSAGGIO -->
+          <div class="sezione-messaggio">
+
+            <!-- MESSAGGIO ID "0" -->
+            <div id="container-messaggio" class="container-messaggio active" data-id="0" >
+
+                <!-- MESSAGGIO RICEVUTO -->
+                <div class="messaggio ricevuto">
+                    <span class="testo-messaggio">Ciao Come stai?</span>
+                     <span class="ora-messaggio">09.45</span>
+                     <i class="fa fa-chevron-down float-right opzioni-messaggio"></i>
+                     <div class="pannello-opzioni">
+                        <div class="info-messaggi">Info message</div>
+                        <div class="cancella-messaggio">Cancella message</div>
                     </div>
-                 </div>
-                 <div class="message sent">
-                    <span class="message-text">tutto bene, te?</span>
-                    <span class="message-time">09.47</span>
-                    <i class="fa fa-chevron-down f-right message-options"></i>
-                    <div class="message-options-panel">
-                        <div class="message-info">Info message</div>
-                        <div class="message-destroy">Cancella message</div>
+                </div>
+                
+                <!-- MESSAGGIO INVIATO -->
+                <div class="messaggio inviato">
+                    <span class="testo-messaggio">Tutto bene, tu?</span>
+                     <span class="ora-messaggio">09.47</span>
+                     <i class="fa fa-chevron-down float-right opzioni-messaggio"></i>
+                     <div class="pannello-opzioni">
+                        <div class="info-messaggi">Info message</div>
+                        <div class="cancella-messaggio">Cancella message</div>
                     </div>
                 </div>
-             </div>
-             <div id="right-messages" class="right-messages" data-id="2">
-                <div class="message received">
-                    <span class="message-text">We, oggi mare?</span>
-                    <span class="message-time">09.45</span>
-                    <i class="fa fa-chevron-down f-right message-options"></i>
-                    <div class="message-options-panel">
-                       <div class="message-info">Info message</div>
-                       <div class="message-destroy">Cancella message</div>
-                   </div>
-                </div>
-                <div class="message sent">
-                   <span class="message-text">No, oggi non ci sono</span>
-                   <span class="message-time">09.47</span>
-                   <i class="fa fa-chevron-down f-right message-options"></i>
-                   <div class="message-options-panel">
-                       <div class="message-info">Info message</div>
-                       <div class="message-destroy">Cancella message</div>
-                   </div>
-               </div>
+
             </div>
-            <div id="right-messages" class="right-messages" data-id="3">
-                <div class="message received">
-                    <span class="message-text">Calcetto?</span>
-                    <span class="message-time">09.45</span>
-                    <i class="fa fa-chevron-down f-right message-options"></i>
-                    <div class="message-options-panel">
-                       <div class="message-info">Info message</div>
-                       <div class="message-destroy">Cancella message</div>
-                   </div>
+
+             <!-- MESSAGGIO ID "1" -->
+             <div id="container-messaggio" class="container-messaggio " data-id="1" >
+
+                <!-- MESSAGGIO RICEVUTO -->
+                <div class="messaggio ricevuto">
+                    <span class="testo-messaggio">Ciao, oggi mare?</span>
+                     <span class="ora-messaggio">08.45</span>
+                     <i class="fa fa-chevron-down float-right opzioni-messaggio"></i>
+                     <div class="pannello-opzioni">
+                        <div class="info-messaggi">Info message</div>
+                        <div class="cancella-messaggio">Cancella message</div>
+                    </div>
                 </div>
-                <div class="message sent">
-                   <span class="message-text">Ovvio zioooo!!</span>
-                   <span class="message-time">09.47</span>
-                   <i class="fa fa-chevron-down f-right message-options"></i>
-                   <div class="message-options-panel">
-                       <div class="message-info">Info message</div>
-                       <div class="message-destroy">Cancella message</div>
-                   </div>
-               </div>
+                
+                <!-- MESSAGGIO INVIATO -->
+                <div class="messaggio inviato">
+                    <span class="testo-messaggio">Va bene, a che ora usciamo?</span>
+                     <span class="ora-messaggio">08.47</span>
+                     <i class="fa fa-chevron-down float-right opzioni-messaggio"></i>
+                     <div class="pannello-opzioni">
+                        <div class="info-messaggi">Info message</div>
+                        <div class="cancella-messaggio">Cancella message</div>
+                    </div>
+                </div>
+
             </div>
-         </div>
-         <!-- footer -->
-        <footer>
+
+             <!-- MESSAGGIO ID "2" -->
+             <div id="container-messaggio" class="container-messaggio" data-id="2" >
+
+                <!-- MESSAGGIO RICEVUTO -->
+                <div class="messaggio ricevuto">
+                    <span class="testo-messaggio">Hola, passi a casa?</span>
+                     <span class="ora-messaggio">23.45</span>
+                     <i class="fa fa-chevron-down float-right opzioni-messaggio"></i>
+                     <div class="pannello-opzioni">
+                        <div class="info-messaggi">Info message</div>
+                        <div class="cancella-messaggio">Cancella message</div>
+                    </div>
+                </div>
+                
+                <!-- MESSAGGIO INVIATO -->
+                <div class="messaggio inviato">
+                    <span class="testo-messaggio">Hola, arrivo!</span>
+                     <span class="ora-messaggio">23.47</span>
+                     <i class="fa fa-chevron-down float-right opzioni-messaggio"></i>
+                     <div class="pannello-opzioni">
+                        <div class="info-messaggi">Info message</div>
+                        <div class="cancella-messaggio">Cancella message</div>
+                    </div>
+                </div>
+
+            </div>
+
+          </div>
+
+          <!-- FOOTER PARTE DESTRA -->
+          <div class="footer-dx">
             <i class="far fa-smile"></i>
             <input id="msg" type="text" placeholder="     Scrivi un messaggio">
             <i class="fas fa-microphone"></i>
+          </div>
 
-        </footer>
-     </div>
-     <!-- /parte destra -->
+        </div>
+        <!-- /PARTE DESTRA -->
+
     </div>
-    <!-- /container di tutta la pagina -->
+    <!-- /CONTAINER INTERA PAGINA -->
 
-    <div id="template-message-sent" style="display: none;">
-        <div class="message sent">
-            <span class="message-text"> </span>
-            <span class="message-time"> </span>
-            <i class="fa fa-chevron-down f-right message-options"></i>
-            <div class="message-options-panel">
-                <div class="message-info">Info message</div>
-                <div class="message-destroy">Cancella message</div>
-            </div>
+    <!-- TEMPLATE -->
+
+    <!-- TEMPLATE MESSAGGIO RICEVUTO -->
+    <div id="template-messaggio-ricevuto" style="display: none;">
+        <div class="messaggio ricevuto">
+            <span class="testo-messaggio"></span>
+            <span class="ora-messaggio"></span>
+            <i class="fa fa-chevron-down float-right opzioni-messaggio"></i>
+            <div class="pannello-opzioni">
+                <div class="info-messaggi">Info message</div>
+                <div class="cancella-messaggio">Cancella message</div>
         </div>
     </div>
 
-    <div id="template-message-received" style="display: none;">
-        <div class="message received">
-            <span class="message-text"> </span>
-            <span class="message-time"> </span>
-            <i class="fa fa-chevron-down f-right message-options"></i>
-            <div class="message-options-panel">
-                <div class="message-info">Info message</div>
-                <div class="message-destroy">Cancella message</div>
-            </div>
+    <!-- TEMPLATE MESSAGGIO INVIATO -->
+    <div id="template-messaggio-inviato" style="display: none;">
+        <div class="messaggio inviato">
+            <span class="testo-messaggio"></span>
+            <span class="ora-messaggio"></span>
+            <i class="fa fa-chevron-down float-right opzioni-messaggio"></i>
+            <div class="pannello-opzioni">
+                <div class="info-messaggi">Info message</div>
+                <div class="cancella-messaggio">Cancella message</div>
         </div>
     </div>
 
-    <script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>

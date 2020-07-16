@@ -63,24 +63,29 @@ function contactClick (){
 
   var clickContatto = $(this);
   var id = clickContatto.data("id");
-  var contatti = $(".contatti .contatto")
+  var contatti = $(".contatti .contatto");
 
   contatti.removeClass("active");
 
   clickContatto.addClass("active");
 
-  var conv = $(".right-messages");
-  var convSelez = $(".right-messages[data-id=" + id + "]");
+  var conv = $(".container-messaggio");
+  var convSelez = $(".container-messaggio[data-id=" + id + "]");
+  var ant = $(".img-header-dx");
+  var antSelez = $(".img-header-dx[data-id=" + id + "]");
+
 
   conv.removeClass("active");
   convSelez.addClass("active");
+  ant.removeClass("active");
+  antSelez.addClass("active");
 
 }
 
 //click su messaggio e eliminazione di esso
 function mostraPanel() {
  
-  $(document).on("click", ".message-options", clickMessageOption );
+  $(document).on("click", ".opzioni-messaggio", clickMessageOption );
 
 }
 
@@ -88,7 +93,7 @@ function mostraPanel() {
 function clickMessageOption() {
 
   var msgBtn = $(this);
-  var msgOption = msgBtn.siblings(".message-options-panel");
+  var msgOption = msgBtn.siblings(".pannello-opzioni");
 
   msgOption.toggle();
 
@@ -97,14 +102,14 @@ function clickMessageOption() {
 
 function eliminaMsg() {
 
-  $(document).on("click", ".message-destroy", clickMessageDestroy );
+  $(document).on("click", ".cancella-messaggio", clickMessageDestroy );
 
 }
 
 function clickMessageDestroy() {
 
   var destroy = $(this);
-  var msg = destroy.closest(".message");
+  var msg = destroy.closest(".messaggio");
 
   msg.remove();
 
@@ -114,11 +119,11 @@ function clickMessageDestroy() {
 //INVIO MESSAGGIO
 function sendMessage(txt) {
   
-  var template = $("#template-message-sent > div").clone();
-  var target = $("#right-messages.active");
+  var template = $("#template-messaggio-inviato > div").clone();
+  var target = $("#container-messaggio.active");
 
-  template.find(".message-text").text(txt);
-  template.find(".message-time").text(getActualHour());
+  template.find(".testo-messaggio").text(txt);
+  template.find(".ora-messaggio").text(getActualHour());
 
   target.append(template);
 
@@ -128,11 +133,11 @@ function sendMessage(txt) {
 //RICEVI MESSAGGIO
 function receivedMessage() {
   
-  var template = $("#template-message-received > div").clone();
-  var target = $("#right-messages.active");
+  var template = $("#template-messaggio-ricevuto > div").clone();
+  var target = $("#container-messaggio.active");
 
-  template.find(".message-text").text("OK");
-  template.find(".message-time").text(getActualHour());
+  template.find(".testo-messaggio").text("OK");
+  template.find(".ora-messaggio").text(getActualHour());
 
   target.append(template);
 

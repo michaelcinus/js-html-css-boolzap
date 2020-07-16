@@ -68,40 +68,41 @@ header{
 .header-sx > *,
 .header-dx > * {
     display: flex;
-    width: 40%;
+    width: 35%;
     height: 100%;
 }
 
-.header-sx .f-dx,
-.header-dx .f-dx {
+.header-sx .float-right,
+.header-dx .float-left {
     text-align: right;
 }
 
-.header-sx .f-dx > *,
-.header-dx .f-dx > * {
+.header-sx .float-right > *,
+.header-dx .float-left > * {
     margin: auto;
 }
 
 
-.f-dx{
+.float-right{
     float: right;
 }
 
-.f.sx{
+.float-left{
     float: left;
 }
 
-.f-dx > *{
+.float-right > *{
     margin: auto;
 }
 
-/* parte sx */
+/* PARTE SINISTRA */
 .parte-sx{
     width: 35%;
     border-right: solid 1px black;
     background-color: rgb(119, 130, 177);
 }
 
+/* SEZIONE RICEVI NOTIFICHE */
 .ricevi-notifiche{
     width: 100%;
     height: 80px;
@@ -109,7 +110,7 @@ header{
     display: flex;
 }
 
-.ricevi-notifiche span{
+.ricevi-notifiche .icon-ricevi-notifiche{
     width: 50px;
     height: 50px;
     border-radius: 100%;
@@ -120,14 +121,14 @@ header{
    color: lightblue;
 }
 
-.ricevi-notifiche div{
+.ricevi-notifiche .text-ricevi-notifiche{
     width: calc(100%- 80px);
     margin: auto;
     padding: 0 10px;
 }
 
 .ricevi-notifiche h3{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: normal;
     margin: 0;
 }
@@ -137,7 +138,8 @@ header{
     font-size: 13px;
 }
 
-.ricerca-chat{
+/* SEZIONE RICERCA CONTATTI */
+.ricerca-contatti{
     width: 100%;
     height: 50px;
     background-color: lightgray;
@@ -146,13 +148,14 @@ header{
     align-items: center;
 }
 
-.ricerca-chat input{
+.ricerca-contatti #ricerca-chat{
     width: 90%;
     height: 80%;
     border: none;
     border-radius: 40px;
 }
 
+/* SEZIONE LISTA CONTATTI */
 .contatto {
     width: 100%;
     height: 80px;
@@ -166,10 +169,11 @@ header{
     background-color: #bfbfbf;
 }
 
-.contatto img{
+img{
     height: 70%;
     width: auto;
     margin: 0 4%;
+    border-radius: 100%;
 }
 
 /* parte dx */
@@ -179,28 +183,30 @@ header{
 
 }
 
-.parte-dx .img-nome{
+/* HEADER PARTE DX */
+.parte-dx .img-header-dx{
+    display: none;
+}
+
+.parte-dx .img-header-dx.active{
     display: flex;
 }
 
-.parte-dx .img-nome span{
-    margin: 10px ;
-}
-
-.right-messages-container{
+/* SEZIONE MESSAGGIO */
+.sezione-messaggio{
     width: 100%;
     height: calc(100% - 70px - 70px);
 }
 
-.right-messages-container .right-messages {
-    display: none;
+.sezione-messaggio .container-messaggio {
+    display: none; 
 }
 
-.right-messages-container .right-messages.active {
+.sezione-messaggio .container-messaggio.active {
     display: block;
 }
 
-.right-messages-container .message{
+.sezione-messaggio .messaggio{
     position: relative;
     float: left;
     display: flex;
@@ -210,37 +216,38 @@ header{
     max-width: 60%;
     margin: 10px;
     padding: 15px;
-    background-color: grey;
+    background-color: rgb(194, 192, 192);
     border-radius: 10px;
     z-index: 100;
     font-size: 15px;
 }
 
-.right-messages-container .message i{
+.sezione-messaggio .messaggio i{
     margin-left: 8px;
 }
 
-.right-messages-container .sent{
+.sezione-messaggio .inviato{
+    background-color: lightgreen;
     float: right;
 }
 
-.right-messages-container .message .message-time{
+.sezione-messaggio .messaggio .ora-messaggio{
     position: absolute;
     bottom: 5px;
     right: 5px;
     font-size: 13px;
 }
 
-.right-messages-container .message .message-options, 
-.right-messages-container .message .message-options-panel{
+.sezione-messaggio .messaggio .opzioni-messaggio, 
+.sezione-messaggio .messaggio .pannello-opzioni{
     display: none;
 }
 
-.right-messages-container .message:hover .message-options{
+.sezione-messaggio .messaggio:hover .opzioni-messaggio{
  display: block;
 }
 
-.right-messages-container .message .message-options-panel{
+.sezione-messaggio .messaggio .pannello-opzioni{
     position: absolute;
     bottom: -75px;
     width: 150px;
@@ -251,13 +258,13 @@ header{
     left: 0;
 }
 
-.message-destroy,
-.message-info {
+.cancella-messaggio,
+.info-messaggi {
     cursor: pointer;
 }
 
 /* footer */
-footer{
+.footer-dx{
     width: 100%;
     height: 70px;
     background-color: lightgray;
@@ -267,13 +274,14 @@ footer{
     color: grey;
 }
 
-footer input{
+.footer-dx #msg{
     width: 90%;
     height: 80%;
     border: none;
     border-radius: 30px;
 }
-footer i {
+
+.footer-dx i {
     font-size: 2em;
     margin: 0 2%;
 }
