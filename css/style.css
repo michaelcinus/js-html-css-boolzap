@@ -162,6 +162,10 @@ header{
     align-items: center;
 }
 
+.contatto.active{
+    background-color: #bfbfbf;
+}
+
 .contatto img{
     height: 70%;
     width: auto;
@@ -188,10 +192,19 @@ header{
     height: calc(100% - 70px - 70px);
 }
 
+.right-messages-container .right-messages {
+    display: none;
+}
+
+.right-messages-container .right-messages.active {
+    display: block;
+}
+
 .right-messages-container .message{
     position: relative;
     float: left;
     display: flex;
+    justify-content: space-between;
     clear: both;
     min-width: 100px;
     max-width: 60%;
@@ -238,6 +251,11 @@ header{
     left: 0;
 }
 
+.message-destroy,
+.message-info {
+    cursor: pointer;
+}
+
 /* footer */
 footer{
     width: 100%;
@@ -260,6 +278,3 @@ footer i {
     margin: 0 2%;
 }
 
-.show{
-    display: block;
-}

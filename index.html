@@ -41,22 +41,22 @@
          </div>
 
          <!-- sezione lista chat (scroll) -->
-         <div id="contatti">
-             <div class="contatto">
+         <div class="contatti">
+             <div class="contatto" data-id="1">
                  <img src="img/avatar.webp" alt="">
                  <span>
                      <h6 class="nome">Marco</h6>
                      <p>bla bla bla bla bla bla....</p>
                  </span>
              </div>
-             <div class="contatto">
+             <div class="contatto" data-id="2">
                 <img src="img/avatar2.png" alt="">
                 <span>
                     <h6 class="nome">Matteo</h6>
                     <p>bla bla bla bla bla bla....</p>
                 </span>
             </div>
-            <div class="contatto">
+            <div class="contatto" data-id="3">
                 <img src="img/avatar3.png" alt="">
                 <span>
                     <h6 class="nome">Martina</h6>
@@ -88,7 +88,7 @@
         </div>
          <!-- sezione messaggio (scroll) -->
          <div class="right-messages-container">
-             <div id="right-messages" class="right-messages">
+             <div id="right-messages" class="right-messages active" data-id="1">
                  <div class="message received">
                      <span class="message-text">Ciao Come stai?</span>
                      <span class="message-time">09.45</span>
@@ -108,6 +108,46 @@
                     </div>
                 </div>
              </div>
+             <div id="right-messages" class="right-messages" data-id="2">
+                <div class="message received">
+                    <span class="message-text">We, oggi mare?</span>
+                    <span class="message-time">09.45</span>
+                    <i class="fa fa-chevron-down f-right message-options"></i>
+                    <div class="message-options-panel">
+                       <div class="message-info">Info message</div>
+                       <div class="message-destroy">Cancella message</div>
+                   </div>
+                </div>
+                <div class="message sent">
+                   <span class="message-text">No, oggi non ci sono</span>
+                   <span class="message-time">09.47</span>
+                   <i class="fa fa-chevron-down f-right message-options"></i>
+                   <div class="message-options-panel">
+                       <div class="message-info">Info message</div>
+                       <div class="message-destroy">Cancella message</div>
+                   </div>
+               </div>
+            </div>
+            <div id="right-messages" class="right-messages" data-id="3">
+                <div class="message received">
+                    <span class="message-text">Calcetto?</span>
+                    <span class="message-time">09.45</span>
+                    <i class="fa fa-chevron-down f-right message-options"></i>
+                    <div class="message-options-panel">
+                       <div class="message-info">Info message</div>
+                       <div class="message-destroy">Cancella message</div>
+                   </div>
+                </div>
+                <div class="message sent">
+                   <span class="message-text">Ovvio zioooo!!</span>
+                   <span class="message-time">09.47</span>
+                   <i class="fa fa-chevron-down f-right message-options"></i>
+                   <div class="message-options-panel">
+                       <div class="message-info">Info message</div>
+                       <div class="message-destroy">Cancella message</div>
+                   </div>
+               </div>
+            </div>
          </div>
          <!-- footer -->
         <footer>

@@ -2,10 +2,10 @@
 function ricercaChat () {
 
   var target = $("#ricerca-chat");
-  target.keyup(serchKeyup);
+  target.keyup(searchKeyup);
  }
 
- function serchKeyup(event) {
+ function searchKeyup(event) {
   
   var input = $(this);
   var txt = input.val();
@@ -16,7 +16,7 @@ function ricercaChat () {
     var contact = $(this);
     var nomeContatto = contact.find(".nome").text();
 
-    if (nomeContatto.toLowerCase().includes(txt.toLowerCase))
+    if (nomeContatto.toLowerCase().includes(txt.toLowerCase()))
      {
       contact.show();
     }else {
@@ -50,20 +50,64 @@ function addSentListener () {
 
 }
 
-//click su messaggio e eliminazione di esso
-$(document).on("click", ".message-options", mostraPanel () );
-$(document).on("click", ".message-options", cancellaMessage () );
 
+//RICERCA CONTATTO NELLA LISTA
+function ricercaContatto (){
 
-function mostraPanel () {
-  var btn = $(this);
-  var panel = btn.find("message-options-panel");
-  panel.toggle();
+  var contatti = $(".contatti .contatto")
+  contatti.click(contactClick);
+
 }
 
-function cancellaMessage () {
-  var btn = $(this);
-  btn.parents("message").remove;
+function contactClick (){
+
+  var clickContatto = $(this);
+  var id = clickContatto.data("id");
+  var contatti = $(".contatti .contatto")
+
+  contatti.removeClass("active");
+
+  clickContatto.addClass("active");
+
+  var conv = $(".right-messages");
+  var convSelez = $(".right-messages[data-id=" + id + "]");
+
+  conv.removeClass("active");
+  convSelez.addClass("active");
+
+}
+
+//click su messaggio e eliminazione di esso
+function mostraPanel() {
+ 
+  $(document).on("click", ".message-options", clickMessageOption );
+
+}
+
+
+function clickMessageOption() {
+
+  var msgBtn = $(this);
+  var msgOption = msgBtn.siblings(".message-options-panel");
+
+  msgOption.toggle();
+
+ } 
+
+
+function eliminaMsg() {
+
+  $(document).on("click", ".message-destroy", clickMessageDestroy );
+
+}
+
+function clickMessageDestroy() {
+
+  var destroy = $(this);
+  var msg = destroy.closest(".message");
+
+  msg.remove();
+
 }
 
 
@@ -71,7 +115,7 @@ function cancellaMessage () {
 function sendMessage(txt) {
   
   var template = $("#template-message-sent > div").clone();
-  var target = $("#right-messages");
+  var target = $("#right-messages.active");
 
   template.find(".message-text").text(txt);
   template.find(".message-time").text(getActualHour());
@@ -85,7 +129,7 @@ function sendMessage(txt) {
 function receivedMessage() {
   
   var template = $("#template-message-received > div").clone();
-  var target = $("#right-messages");
+  var target = $("#right-messages.active");
 
   template.find(".message-text").text("OK");
   template.find(".message-time").text(getActualHour());
@@ -100,6 +144,7 @@ function getActualHour(){
 
   var date = new Date();
   return date.getHours() + ":" + date.getMinutes();
+
 }
 
 
@@ -107,6 +152,12 @@ function getActualHour(){
 function init() {
 
   addSentListener();
+  ricercaChat();
+  ricercaContatto();
+  mostraPanel();
+  eliminaMsg();
+
 }
 
 $(document).ready(init);
+
