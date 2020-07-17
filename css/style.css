@@ -102,6 +102,7 @@ header{
     background-color: rgb(119, 130, 177);
 }
 
+
 /* SEZIONE RICEVI NOTIFICHE */
 .ricevi-notifiche{
     width: 100%;
@@ -163,6 +164,8 @@ header{
     border-bottom: solid 1px gray;
     display: flex;
     align-items: center;
+    cursor: pointer;
+
 }
 
 .contatto.active{
@@ -190,6 +193,10 @@ img{
 
 .parte-dx .img-header-dx.active{
     display: flex;
+}
+
+.parte-dx .icon-header-dx {
+    width: 20%;
 }
 
 /* SEZIONE MESSAGGIO */
@@ -265,13 +272,15 @@ img{
 
 /* footer */
 .footer-dx{
-    width: 100%;
+    width: 52%;
     height: 70px;
     background-color: lightgray;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: grey;
+    position: fixed;
+    z-index: 990;
 }
 
 .footer-dx #msg{
